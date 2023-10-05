@@ -1,0 +1,21 @@
+@import "../../styles/variables";
+
+.header {
+  box-shadow: 0 3px 6px $light-shadow;
+
+  &__container {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  &__nav-link {
+    color: $white-color;
+    text-decoration: none;
+    font-size: $large-font-size;
+    transition: color 0.3s;
+  }
+}

@@ -1,0 +1,14 @@
+@import "../../styles/variables";
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+
+
+  &__title {
+    margin-top: 20px;
+    color: $dark-grey-color;
+    font-size: $huge-font-size;
+  }
+}

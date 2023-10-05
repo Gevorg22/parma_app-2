@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import Header from "./components/Header/Header";
+import UserList from "./pages/UserList/UserList";
+import UserForm from "./pages/UserForm/UserForm";
+import NotFound from "./pages/NotFound/NotFound";
+import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<UserList />} />
+            <Route path="/add" element={<UserForm key="add" />} />
+            <Route path="/edit/:id" element={<UserForm key="edit" />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+      </div>
+    </Provider>
   );
 }
 

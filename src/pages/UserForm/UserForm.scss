@@ -1,0 +1,132 @@
+@import "../../styles/variables";
+
+.user-form {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: $white-color;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  box-shadow: 0 0 10px $light-shadow;
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+    span {
+      display: flex;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  }
+
+  &__field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__label {
+    margin-bottom: 7px;
+    margin-left: 7px;
+  }
+
+  &__input,
+  &__select,
+  &__textarea {
+    padding: 10px 15px;
+    border: 1px solid$border-color;
+    border-radius: 6px;
+    font-size: $normal-font-size;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: $border-focus-color;
+      outline: none;
+    }
+  }
+
+  &__radio {
+    margin-right: 5px;
+  }
+
+  &__textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  &__input::placeholder,
+  &__textarea::placeholder {
+    color: $placeholder-color;
+    opacity: 0.7;
+  }
+
+  &__input-error {
+    border: 1px solid $error-color;
+  }
+
+  &__error {
+    margin-top: 5px;
+    color: $error-color;
+    font-size: $small-font-size;
+  }
+
+  &__submit {
+    width: 200px;
+    align-self: center;
+    padding: 10px 25px;
+    background-color: #8da7cc;
+    border: none;
+    border-radius: 6px;
+    color: $white-color;
+    font-size: $normal-font-size;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: rgb(51, 61, 77);
+    }
+
+    &:disabled {
+      background-color: $border-color;
+      border: none;
+      color: $placeholder-color;
+      cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
+      background-color: #5b87c4;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .user-form {
+    width: 250px;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .user-form {
+    width: 400px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .user-form {
+    width: 600px;
+  }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+  .user-form {
+    width: 600px;
+  }
+}
